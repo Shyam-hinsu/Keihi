@@ -1,6 +1,21 @@
-@import './nav.scss';
+@import "./nav.scss";
 
-$bg-color : red;
+$bg-color: red;
 .bg-red {
-    background-color: $bg-color;
+  background-color: $bg-color;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  // background: black;
+  width: 100%;
+  flex-direction: column;
+}
+
+.content-container {
+  width: 100%;
+  height: 100%;
 }
