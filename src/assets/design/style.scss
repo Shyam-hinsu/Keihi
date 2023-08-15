@@ -1,6 +1,7 @@
+@import "./variable.scss";
 @import "./nav.scss";
 
-$bg-color: red;
+
 .bg-red {
   background-color: $bg-color;
 }
@@ -10,7 +11,7 @@ $bg-color: red;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  // background: black;
+  background: $app-background;
   width: 100%;
   flex-direction: column;
 }

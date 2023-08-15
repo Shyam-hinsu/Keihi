@@ -42,7 +42,7 @@ const nevigationData = [
     text: "Add",
   },
   {
-    icon: "user-secret",
+    icon: "clock",
     text: "History",
   },
   {

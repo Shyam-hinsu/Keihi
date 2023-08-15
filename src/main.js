@@ -12,9 +12,10 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 /* import specific icons */
 import { faUserSecret } from "@fortawesome/free-solid-svg-icons";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faClock } from "@fortawesome/free-solid-svg-icons";
 
 /* add icons to the library */
-library.add(faUserSecret, faPlus);
+library.add(faUserSecret, faPlus, faClock);
 
 createApp(App)
   .use(router)
