@@ -59,4 +59,3 @@ function clickButton(item) {
 }
 </script>
 
-<style lang="scss" scoped></style>

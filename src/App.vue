@@ -13,6 +13,6 @@ import Header from "../src/components/header.vue";
 import AppContain from "../src/components/app-contain.vue";
 </script>
 
-<style lang="scss">
-@import "./assets/design/style.scss";
+<style >
+@import "./assets/design/style.css";
 </style>

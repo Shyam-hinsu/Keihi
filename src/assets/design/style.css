@@ -1,9 +1,9 @@
-@import "./variable.scss";
-@import "./nav.scss";
+@import "./variable.css";
+@import "./nav.css";
 
 
 .bg-red {
-  background-color: $bg-color;
+  background-color: var(--bg-color);
 }
 
 .app {
@@ -11,7 +11,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: $app-background;
+  background: var(--app-background);
   width: 100%;
   flex-direction: column;
 }
