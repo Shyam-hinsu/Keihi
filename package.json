@@ -7,8 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-        "host": "vite --host"
-
+    "host": "vite --host"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
@@ -18,7 +17,9 @@
     "@fortawesome/vue-fontawesome": "^3.0.3",
     "element-plus": "^2.4.4",
     "firebase": "^10.7.1",
+    "moment": "^2.30.1",
     "pinia": "^2.1.7",
+    "uuid": "^9.0.1",
     "vue": "^3.3.4",
     "vue-router": "^4.2.4"
   },

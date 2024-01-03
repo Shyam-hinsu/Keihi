@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import { db } from "@/firebase/firebaseInit";
-// import moment from "moment";
-// import { v4 as uuidv4 } from "uuid";
+import moment from "moment";
+import { v4 as uuidv4 } from "uuid";
 import {
   collection,
   onSnapshot,
@@ -13,9 +13,9 @@ import {
   orderBy,
 } from "firebase/firestore";
 
-let notesCollectionRef;
-let notesCollectionQuery;
-let getNotesSnapshots = null;
+let transationCollectionRef;
+let transationCollectionQuery;
+let getTransationSnapshots = null;
 
 export const useTransationStore = defineStore("transationStore", {
   state: () => {
@@ -23,31 +23,31 @@ export const useTransationStore = defineStore("transationStore", {
       formState: {
         note: "",
       },
-      notes: [],
-      isNotesLoaded: false,
+      transations: [],
+      isTransationLoaded: false,
     };
   },
   actions: {
     init() {
       //store
-      notesCollectionRef = collection(db, "transaction");
-      // notesCollectionRef = collection(
+      transationCollectionRef = collection(db, "transaction");
+      // transationCollectionRef = collection(
       //   db,
       //   "users",
       //   "5tNDlnD77jga5ZCCcr4B7iHPPZB3",
       //   "notes"
       // );
-      notesCollectionQuery = query(notesCollectionRef, orderBy("id"));
-      this.getNotes();
+      transationCollectionQuery = query(transationCollectionRef, orderBy("id"));
+      this.getTransation();
     },
 
-    async getNotes() {
-      this.isNotesLoaded = true;
+    async getTransation() {
+      this.isTransationLoaded = true;
 
-      getNotesSnapshots = onSnapshot(
-        notesCollectionQuery,
+      getTransationSnapshots = onSnapshot(
+        transationCollectionQuery,
         (querySnapshot) => {
-          let notes = [];
+          let transations = [];
           querySnapshot.forEach((doc) => {
             console.log(doc);
             let note = {
@@ -55,17 +55,30 @@ export const useTransationStore = defineStore("transationStore", {
               category: doc.data().category,
               timestemp: doc.data().timestemp,
               amount: doc.data().amount,
+              data: doc.data().date,
+              discription: doc.data().discription,
             };
-            notes.unshift(note);
+            transations.unshift(note);
           });
-          this.notes = notes;
-          this.isNotesLoaded = false;
+          this.transations = transations;
+          this.isTransationLoaded = false;
         },
         (error) => {
           console.log(error);
         }
       );
       //later  on
+    },
+
+    async submit(formDataContext) {
+      const formData = formDataContext.value;
+      await setDoc(doc(transationCollectionRef, uuidv4()), {
+        category: formData.category,
+        amount: formData.amount,
+        discription: formData.discription,
+        timestemp: Date.now(),
+        date: moment().format("MMMM Do YYYY, h:mm:ss a"),
+      });
     },
   },
 });
