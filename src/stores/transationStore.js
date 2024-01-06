@@ -37,7 +37,11 @@ export const useTransationStore = defineStore("transationStore", {
       //   "5tNDlnD77jga5ZCCcr4B7iHPPZB3",
       //   "notes"
       // );
-      transationCollectionQuery = query(transationCollectionRef, orderBy("id"));
+      transationCollectionQuery = query(
+        transationCollectionRef,
+        orderBy("timestemp")
+      );
+
       this.getTransation();
     },
 
@@ -49,14 +53,15 @@ export const useTransationStore = defineStore("transationStore", {
         (querySnapshot) => {
           let transations = [];
           querySnapshot.forEach((doc) => {
-            console.log(doc);
             let note = {
               id: doc.id,
               category: doc.data().category,
               timestemp: doc.data().timestemp,
               amount: doc.data().amount,
               data: doc.data().date,
-              discription: doc.data().discription,
+              onlyDat: doc.data().date.split(",")[0],
+
+              description: doc.data().description,
             };
             transations.unshift(note);
           });
@@ -75,7 +80,7 @@ export const useTransationStore = defineStore("transationStore", {
       await setDoc(doc(transationCollectionRef, uuidv4()), {
         category: formData.category,
         amount: formData.amount,
-        discription: formData.discription,
+        description: formData.description || "",
         timestemp: Date.now(),
         date: moment().format("MMMM Do YYYY, h:mm:ss a"),
       });

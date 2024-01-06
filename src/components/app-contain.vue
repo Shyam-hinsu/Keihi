@@ -1,8 +1,5 @@
 <template>
-  <div class="content-container">
-    <RouterView></RouterView>
-  </div>
+  <RouterView></RouterView>
 </template>
 
 <script setup></script>
-

@@ -1,5 +1,6 @@
 @import "./variable.css";
 @import "./nav.css";
+@import "./font.css";
 
 
 .bg-red {
@@ -10,11 +11,18 @@
   background-color: black !important;
 }
 
+.bg-gray-light {
+  background-color: #323234 !important;
+}
+
+.bg-gray-dark {
+  background-color: #56565c !important;
+}
 .app {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 80vh;
   background: var(--app-background);
   width: 100%;
   flex-direction: column;
@@ -25,7 +33,9 @@
     flex-direction: column;
     height: 100vh;
     min-height: -webkit-fill-available;
-    background: yellowgreen;
+    background: #161214;
+    font-family: 'Share Tech Mono', monospace;
+    color: white;
 }
 
 .common-layout .content-container {
@@ -33,32 +43,45 @@
   height: 100%;
 }
 
-.common-layout .content-container .footer {
+.common-layout .content-container .header {
  display: flex;
  justify-content: flex-end;
  padding: 20px 10px;
  justify-items: center;
+ background-color :#323234;
+border-bottom-left-radius: 20px;
+border-bottom-right-radius: 20px;
+position: relative;
 }
 
-.common-layout .content-container .footer .add-button {
-background-color: black;
+.common-layout .content-container .header .add-button {
+  position: absolute;
+background-color: #56565c;
 padding: 30px;
+border: none;
+position: absolute;
+    right: 15px;
+    color: var(--white) !important  
+}
+
+.common-layout .content-container .header .add-button:hover {
+  background-color: #56565c;
+  color: var(--white) !important
 
 }
 
-.common-layout .content-container .footer .add-button:hover {
-  background-color: black;
-  color: white;
-
-}
-
-.common-layout .content-container .footer .add-button .icon {
-      font-size: 1.5em;
+.common-layout .content-container .header .add-button .icon {
+  font-size: 1.5em;
 }
 
 
 .transation-form{
   border-radius: 20px !important;
-  color: whitesmoke !important;
+  color: var(--white)
+  
 }
+.transation-form .el-dialog__title{
+  color: var(--white)}
+
+
 

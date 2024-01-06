@@ -1,14 +1,15 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 import AddForm from "@/views/add-form.vue";
+import TransactionList from "@/views/transation-list.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: "/",
-      name: "AddForm",
-      component: AddForm,
+      name: "TransactionList",
+      component: TransactionList,
     },
     // {
     //   path: "/SEO&LeadGeneration/SEOServices",
