@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import AddForm from "@/views/add-form.vue";
 import TransactionList from "@/views/transation-list.vue";
+import Analytics from "@/views/analytics.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -11,6 +12,12 @@ const router = createRouter({
       name: "TransactionList",
       component: TransactionList,
     },
+    {
+      path: "/analytics",
+      name: "Analytics",
+      component: Analytics,
+    },
+
     // {
     //   path: "/SEO&LeadGeneration/SEOServices",
     //   name: "SeoServices",

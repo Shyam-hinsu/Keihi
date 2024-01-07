@@ -18,6 +18,7 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { faUserSecret } from "@fortawesome/free-solid-svg-icons";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faClock } from "@fortawesome/free-solid-svg-icons";
+
 /* add icons to the library */
 library.add(faUserSecret, faPlus, faClock);
 

@@ -33,7 +33,7 @@
     flex-direction: column;
     height: 100vh;
     min-height: -webkit-fill-available;
-    background: #161214;
+    background: #1f1f1f;
     font-family: 'Share Tech Mono', monospace;
     color: white;
 }
@@ -56,13 +56,18 @@ position: relative;
 
 .common-layout .content-container .header .add-button {
   position: absolute;
-background-color: #56565c;
-padding: 30px;
-border: none;
-position: absolute;
-    right: 15px;
-    color: var(--white) !important  
+  background-color: #56565c;
+  padding: 30px;
+  border: none;
+  position: absolute;
+  right: 15px;
+  color: var(--white) !important  
 }
+
+
+
+
+
 
 .common-layout .content-container .header .add-button:hover {
   background-color: #56565c;
@@ -74,6 +79,27 @@ position: absolute;
   font-size: 1.5em;
 }
 
+
+
+.common-layout .content-container .header .controll-btn {
+  position: absolute;
+  /* background-color: red; */
+  padding: 25px;
+  border: none;
+  position: absolute;
+  left: 15px;
+  color: var(--white) !important
+}
+
+.common-layout .content-container .header .navigation-btn {
+  position: absolute;
+  /* background-color: red; */
+  padding: 25px;
+  border: none;
+  position: absolute;
+  left: 15px;
+  color: var(--white) !important
+}
 
 .transation-form{
   border-radius: 20px !important;
