@@ -1,9 +1,11 @@
 <template>
-  <div>this is analytics</div>
+  <div>
+    <Chart />
+  </div>
 </template>
 
-<script>
-export default {};
+<script setup>
+import Chart from "../components/chart/chart.vue";
 </script>
 
 <style lang="scss" scoped></style>
